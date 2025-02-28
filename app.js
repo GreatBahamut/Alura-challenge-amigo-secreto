@@ -19,8 +19,8 @@ function agregarAmigo() {
     || amigo.toLowerCase() == 'caliburnus' 
     ){
         intentoAmigo.value =''
-        alert(`Amigo inválido`) 
-        alert('Inserte otro nombre de amigo')
+        alert(`Amigo inválido.`) 
+        alert('Por favor inserte otro nombre de amigo.')
     }
     else {
         intentoAmigo.value = ''
@@ -28,4 +28,17 @@ function agregarAmigo() {
         nuevoAmigo.textContent = amigo;
         lista.appendChild(nuevoAmigo)
     }
+}
+
+
+function sortearAmigo() {
+    const amigos = document.querySelectorAll('#listaAmigos li');
+    
+    if (amigos.length <= 1) {
+        alert('Añada amigos a lista por favor.');
+        return;
+    }
+    const numeroAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoAleatorio = amigos[numeroAleatorio].textContent;
+    resultados.textContent = `Tu amix secreto es: ${amigoAleatorio}!!!!🎉`;
 }
